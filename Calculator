@@ -1,0 +1,12 @@
+PRINT("Enter two numbers and operator")
+Read n1,n2
+Read Operator
+SET result to 0
+if(Operator=='*')
+result=n1*n2
+PRINT(result)
+else if(Operator=='/')
+result=n1/n2
+PRINT(result)
+else 
+PRINT("Operator is not valid")
