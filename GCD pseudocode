@@ -1,0 +1,12 @@
+Read n1,n2
+SET max TO n1
+SET lcm TO 0
+FOR counter=1 TO 100
+ if max%n2==0
+  lcm=max
+else
+  max=max+n1
+PRINT(LCM)
+SET GCD TO 0
+GCD=a*b/LCM
+PRINT (GCD)
