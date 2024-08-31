@@ -1,0 +1,18 @@
+Read Day
+SET result TO 0
+Result=Day%7
+if Result==0
+  PRINT("Sunday")
+else if(Result==1)
+    PRINT("Monday")
+else if(Result==2)
+    PRINT("Tuesday")
+else if(Result==3)
+    PRINT("Wednesday")
+else if(Result==4)
+    PRINT("Thursday")
+else if(Result==5)
+    PRINT("Firday")
+else if(Result==6)
+    PRINT("Saturday")
+
