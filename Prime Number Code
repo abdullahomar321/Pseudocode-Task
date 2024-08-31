@@ -1,0 +1,12 @@
+Read Number
+SET IsPrime to FALSE
+SET EndPoint to 0
+Read EndPoint      #User defines the ending point of the counter.
+FOR count 1 TO EndPoint
+if(Number==count)  #Checks the point if number entered and the current number in loop are identical. Then it checks for the Prime Number's condition.
+  if(Number%1==0 AND Number%Number==0)
+     IsPrime=TRUE
+     PRINT(Number,"Is Prime")
+  else
+     IsPrime=FALSE
+     PRINT("Number entered is not prime")
