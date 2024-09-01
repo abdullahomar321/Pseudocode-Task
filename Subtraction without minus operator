@@ -1,0 +1,4 @@
+Read n1,n2
+SET result to 0
+result=n1 NOT(+) n2
+PRINT result
