@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+   float pertrip=1270;
+   float fwdtrip=118;
+   float returntrip=123;
+   float totalcost,totalfuelused;
+   float fwd,ret,fwdcost,retcost;
+   float avg;
+   printf("Enter avg");
+   scanf("%f",&avg); 
+   if(avg>0){
+       fwd=pertrip/avg;
+       ret=pertrip/avg;
+       fwdcost=fwd*fwdtrip;
+       retcost=ret*returntrip;
+       totalcost=fwdcost+retcost;
+       totalfuelused=fwd+ret;
+       printf("%f %f",totalfuelused,totalcost);
+   }
+   else{
+       printf("Invalid value");
+   }
+    return 0;
+}
