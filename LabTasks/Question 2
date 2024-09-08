@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main()
+{
+    int n1,n2,temp;
+    printf("Enter two values");
+    scanf("%d",&n1);
+    scanf("%d",&n2);
+    temp=a;
+    a=b;
+    b=temp;
+    printf("%d %d",n1,n2);
+
+    return 0;
+}
