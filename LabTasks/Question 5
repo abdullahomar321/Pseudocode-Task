@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+    float principal,interest,rate,timeperiod;
+    printf("Enter principal amount, time period and ROI");
+    scanf("%f",&principal);
+    scanf("%f",&rate);
+    scanf("%f",&timeperiod);
+    if(rate>5 && rate<10 && timeperiod>1 && timeperiod<10 && principal>100 && principal<1000000){
+        interest=(principal*rate*timeperiod)/100;
+        printf("%f",interest);
+    }
+    else{
+        printf("Invalid values");
+    }
+    
+
+    return 0;
+}
