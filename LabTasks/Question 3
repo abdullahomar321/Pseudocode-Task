@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    float pay,taxrate;
+    float taxtopay,finalpay;
+    printf("Enter pay and taxrate");
+    scanf("%f",&pay);
+    scanf("%f",&taxrate);
+    taxtopay=(taxrate/100)*pay;
+    finalpay=pay-taxtopay;
+    printf("the person has to pay %f in taxes and his final pay is %f PKR",taxtopay,finalpay);
+    
+
+    return 0;
+}
