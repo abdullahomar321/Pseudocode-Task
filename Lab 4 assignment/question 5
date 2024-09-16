@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void main() {
+   int ID;
+   int bill,units;
+   printf("Enter ID");
+   scanf("%d",&ID);
+   printf("Enter units consumed");
+   scanf("%d",&units);
+   if(units<=199){
+       bill=units*16.2;
+       printf("%d",bill);
+   }
+   else if(units>=200 && units<300){
+       bill=units*20.1;
+       printf("%d",bill);
+   }
+   
+   else if(units>=300 && units<500){
+       bill=units*27.1;
+       printf("%d",bill);
+   }
+   else{
+       bill=units*35.9;
+       printf("%d",bill);
+       if(bill>18000){
+           int newbill=115*bill;
+           printf("The new bill is %d",newbill);
+       }
+   }
+        
+    
+}
