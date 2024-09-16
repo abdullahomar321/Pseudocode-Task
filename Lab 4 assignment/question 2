@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+void main() {
+     int n1,n2,result;
+     char op;
+     printf("Enter operator");
+     scanf("%c",&op);
+     printf("Enter two numbers \n");
+     scanf("%d",&n1);
+     scanf("%d",&n1);
+     switch(op){
+          case '+':
+          result=n1+n2;
+          printf("%d",result);
+          break;
+          case '/':
+          result=n1/n2;
+          printf("%d",result);
+          break;
+          case '-':
+          result=n1-n2;
+          printf("%d",result);
+          break;
+          case '*':
+          result=n1*n2;
+          printf("%d",result);
+          break;
+          default:
+          printf("Invalid operator");
+     }
+        
+    
+}
