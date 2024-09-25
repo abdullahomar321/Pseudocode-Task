@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main()
+{
+   char x;
+   x='d';
+   char org,decrypted,encrypted;
+   printf("Enter a character to encrypt");
+   scanf("%c",&org);
+   
+   encrypted=org^x;
+   printf("%c",&encrypted);
+   
+   decrypted=encrypted^x;
+   printf("%c",&decrypted);
+    
+    return 0;
+}
