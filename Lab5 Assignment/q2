@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main()
+{
+   int exam_marks;
+   int a_marks,total,attendance;
+   printf("How many marks did get in your finals?");
+   scanf("%d",&exam_marks);
+   printf("Enter your attendance?");
+   scanf("%d",&attendance);
+   printf("Enter your scores in assignments");
+   scanf("%d",&a_marks);
+   if(attendance<80){
+       printf("Sorry. You have to repeat this semester");
+   }
+   else if(attendance>=80 && a_marks>80 && exam_marks>55){
+       total=a_marks+exam_marks/3;  //assuming there are only 3 subjects
+       printf("You have secured an excellent avg of %d",total);
+       
+       if(a_marks>70 && a_marks<80 && exam_marks>50 && exam_marks<55){
+           total=a_marks+exam_marks/3;
+           printf("You have secured an avg of %d  Good Work",total);
+       }
+       else if(a_marks>60 && a_marks<70 && exam_marks>40 && exam_marks<50){
+           total=a_marks+exam_marks/3;
+           printf("You have secured an avg of %d",total);
+       }
+       else if(a_marks>50 && a_marks<60 && exam_marks>30 && exam_marks<40){
+           total=a_marks+exam_marks/3;
+           printf("You will have to repeat two courses. Your total is %d",total);
+       }
+       else if(a_marks<50 && exam_marks<40){
+           printf("Visit the one-stop for supplementary papers' registration");
+       }
+       
+   }
+   
+   
+    
+    return 0;
+}
