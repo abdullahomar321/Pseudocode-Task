@@ -1,0 +1,28 @@
+var tasks=[];
+function addtask(task){
+    tasks.push(task);
+    console.log("Task added"+task);
+}
+function discard(index){
+    if(index>=0 && index< tasks.length){
+        var removed=tasks.splice(index,1);
+        console.log("Task discarded"+removed);
+    }else{
+        console.log("Invalid index");
+    }
+}
+function display(){
+    console.log("All Taks");
+    for(var i=0;i<tasks.length;i++){
+        console.log((i+1) + ":"+tasks[i]);
+    }
+}
+function clear(){
+    tasks=[];
+    console.log("Clear");
+}
+addtask("Attend Lecture");
+addtask("Go to Gym");
+display();
+discard(1);
+clear();
