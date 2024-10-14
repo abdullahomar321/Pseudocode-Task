@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+    int x,duplicate;
+    printf("Enter any number");
+    scanf("%d",&x);
+    int n=x-1;
+    int arr[n];
+    for(int y=0;y<n;y++){
+        printf("Enter numbers in the element");
+        scanf("%d",&arr[y]);
+    }
+    for(int i=0;i<n;i++){
+        if(arr[i]==arr[i+1]){
+            duplicate++;
+            printf("%d occurs more than once \n",arr[i]);
+            
+        }
+    }
+    return 0;
+    }
