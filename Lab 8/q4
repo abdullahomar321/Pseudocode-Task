@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main()
+{
+    int r1,r2,c1,c2;
+    printf("Enter the dimensions for the first matrix \n");
+    scanf("%d",&r1);
+    scanf("\n %d",&c1);
+    printf("Enter the dimensions for the second matrix \n");
+    scanf("%d",&r2);
+    scanf("\n %d",&c2);
+    
+    int arr[r1][c1];
+    int brr[r2][c2];
+    if(c1!=r2){
+        printf("Multiplication not possible");
+    }
+    else{
+
+        printf("Enter Values for first array");
+        for(int l=0;l<r1;l++){
+            for(int u=0;u<c1;u++){
+                scanf("%d  ",&arr[l][u]);
+            }
+        }
+        printf("Enter Values for second array");
+        for(int p=0;p<r2;p++){
+            for(int g=0;g<c2;g++){
+                scanf("%d  ",&brr[p][g]);
+            }
+        }
+        int crr[r1][c2];
+        for(int i=0;i<r1;i++){
+            for(int j=0;j<c2;j++){
+                crr[i][j]=arr[i][j]*brr[i][j]+arr[i][j+1]*brr[i+1][j];
+                
+            }
+        }
+        printf("Resultant Matrix: \n")
+        for(int x=0;x<r1;x++){
+        for(int y=0;y<c2;y++){
+            printf("%d   ",crr[x][y]);
+        } printf("  \n");
+    }
+    }
+    
+
+    return 0;
+}
