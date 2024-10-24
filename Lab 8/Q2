@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main()
+{
+   int num;
+   scanf("%d",&num);
+   if(num%2==0){
+       printf("CODE STOPPED HAWWWWWW");
+   }
+   else{
+       for(int i=num;i>0;i--){
+           for(int j=num;j>i;j--){
+               printf("*");
+           }
+           printf("\n");
+       }
+   }
+
+    return 0;
+}
