@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+void swap(int a,int b){
+    int temp;
+    temp=a;
+    a=b;
+    b=temp;
+    printf("Value of first is %d \n",a);
+    printf("Value of second is %d ",b);
+}
+
+int main(){
+    int e,g;
+    printf("Enter e and g");
+    scanf("%d",&e);
+    scanf("%d",&g);
+    swap(e,g);
+ 
+
+    return 0;
+}
