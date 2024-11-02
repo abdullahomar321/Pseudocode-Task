@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include<string.h>
+
+
+
+void calc(int a,int b, char op)
+{
+
+if(op=='+'){
+    int sum=a+b;
+    printf("%d",sum);
+}
+else if(op=='-'){
+    int diff=a-b;
+    printf("%d",diff);
+}
+else if(op=='/'){
+    int result=a/b;
+    printf("%d",result);
+}
+else if(op=='*'){
+    int prod=a*b;
+    printf("%d",prod);
+}
+}
+int main(){
+    int e,f;
+    char sign;
+    printf("Enter values");
+    scanf("%d",&e);
+    scanf("%d",&f);
+    printf("Enter operator");
+    scanf(" %c",&sign);
+    calc(e,f,sign);
+    
+    return 0;
+}
+ 
