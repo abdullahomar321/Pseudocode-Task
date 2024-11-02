@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include<string.h>
+
+
+
+void rev(char sent[100])
+{
+
+    scanf("%[^\n]s",sent);
+    int k;
+    int size;
+    while(sent[k]!='\0'){
+        size++;
+        k++;
+        
+    }
+    printf("The size is %d\n",size);
+    int i,j;
+    for(i=0,j=size-1;i<=j;i++,j--){
+        char temp=sent[i];
+        sent[i]=sent[j];
+        sent[j]=temp;
+    }
+    puts(sent);
+
+}
+int main(){
+    char word[100];
+    scanf("%[^\n]s",word);
+    rev(word);
+    
+    return 0;
+}
+ 
