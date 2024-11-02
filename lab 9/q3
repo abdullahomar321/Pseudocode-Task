@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void prime(int a){
+    int isprime;
+    isprime=0;
+    if(a==1 || a==0){
+        printf("not a prime number");
+    }
+    for(int i=2;i<=a/2;i++){
+        if(a%i==0){
+            isprime=0;
+            break;
+        }
+        else{
+            isprime=1;
+        }
+    }
+    if(isprime==1){
+        printf("%d is a prime number",a);
+    }else{
+        printf("Not a prime number");
+    }
+    
+}
+
+int main(){
+    int g;
+    printf("Enter value of g");
+    scanf("%d",&g);
+    prime(g);
+    
+    return 0;
+    
+}
