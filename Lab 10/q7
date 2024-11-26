@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+#define METER_TO_KM_CONVERSION 0.001
+
+void convertToKilometers(float meters);
+
+int main() {
+    float meters;
+    char choice;
+
+    do {
+        printf("Enter the distance in meters: ");
+        scanf("%f", &meters);
+        
+        convertToKilometers(meters);
+        
+        printf("Do you want to convert another distance? (y/n): ");
+        getchar();  // To clear the newline character from the buffer
+        scanf("%c", &choice);
+    } while (choice == 'y' || choice == 'Y');
+    
+    return 0;
+}
+
+void convertToKilometers(float meters) {
+    static int callCount = 0;
+    
+    float kilometers = meters * METER_TO_KM_CONVERSION;
+    printf("%.2f meters is equal to %.4f kilometers.\n", meters, kilometers);
+    
+    callCount++;
+    printf("The convertToKilometers function has been called %d times.\n", callCount);
+}
