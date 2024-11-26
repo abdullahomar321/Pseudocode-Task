@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+typedef struct {
+    float x;
+    float y;
+} Point;
+
+float calculateDistance(Point p1, Point p2) {
+    return sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+}
+
+int isPointWithinBoundary(Point p, Point bottomLeft, Point topRight) {
+    return (p.x >= bottomLeft.x && p.x <= topRight.x && p.y >= bottomLeft.y && p.y <= topRight.y);
+}
+
+int main() {
+    Point p1 = {2.0, 3.0};
+    Point p2 = {5.0, 7.0};
+    
+    float distance = c
