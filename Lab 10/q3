@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+#define MAX_TEMP 40  // Maximum allowable temperature in Celsius
+
+int compareTemperature(int temp) {
+    static int count = 0;  // Static variable to count how many times temp exceeds the limit
+    
+    if (temp > MAX_TEMP) {
+        count++;  // Increment count if temperature exceeds the limit
+        printf("Temperature %d°C exceeds the limit of %d°C.\n", temp, MAX_TEMP);
+    } else {
+        printf("Temperature %d°C is within the allowable limit of %d°C.\n", temp, MAX_TEMP);
+    }
+    
+    return count;
+}
+
+int main() {
+    int temperatures[] = {35, 42, 38, 45, 30};  // Example temperatures
+    int size = sizeof(temperatures) / sizeof(temperatures[0]);
+    
+    int countExceeded = 0;
+    for (int i = 0; i < size; i++) {
+        countExceeded = compareTemperature(temperatures[i]);
+    }
+
+    printf("Total number of times temperature exceeded the limit: %d\n", countExceeded);
+    
+    return 0;
+}
