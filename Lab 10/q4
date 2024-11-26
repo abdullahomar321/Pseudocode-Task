@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_CARS 100
+
+typedef struct {
+    char make[50];
+    char model[50];
+    int year;
+    float price;
+    float mileage;
+} Car;
+
+void addCar(Car cars[], int *carCount);
+void displayCars(Car cars[], int carCount);
+void searchByMakeOrModel(Car cars[], int carCount, const char *searchTerm);
+
+int main() {
+    Car cars[MAX_CARS];
+    int carCount = 0;
+    int choice;
+    
+    while (1) {
+        printf("\nCar Dealership Menu:\n");
+        printf("1. Add a new car\n");
+        printf("2. Display list of cars\n");
+        printf("3. Search for a car by make or model\n")
