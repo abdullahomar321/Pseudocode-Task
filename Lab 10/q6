@@ -1,0 +1,118 @@
+#include <stdio.h>
+#include <string.h>
+
+#define MAX_PACKAGES 100
+
+typedef struct {
+    char packageName[50];
+    char destination[50];
+    int duration;  // duration in days
+    float cost;    // cost in dollars
+    int availableSeats;
+} TravelPackage;
+
+void bookPackage(TravelPackage packages[], int *packageCount);
+void displayPackages(TravelPackage packages[], int packageCount);
+
+int main() {
+    TravelPackage packages[MAX_PACKAGES];
+    int packageCount = 0;
+    int choice;
+    
+    while (1) {
+        printf("\nTravel Agency Menu:\n");
+        printf("1. Add a new travel package\n");
+        printf("2. Display available travel packages\n");
+        printf("3. Book a travel package\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+        
+        switch (choice) {
+            case 1:
+                if (packageCount < MAX_PACKAGES) {
+                    printf("Enter package details:\n");
+                    printf("Package name: ");
+                    fgets(packages[packageCount].packageName, 50, stdin);
+                    packages[packageCount].packageName[strcspn(packages[packageCount].packageName, "\n")] = '\0';
+                    
+                    printf("Destination: ");
+                    fgets(packages[packageCount].destination, 50, stdin);
+                    packages[packageCount].destination[strcspn(packages[packageCount].destination, "\n")] = '\0';
+                    
+                    printf("Duration (in days): ");
+                    scanf("%d", &packages[packageCount].duration);
+                    
+                    printf("Cost (in dollars): ");
+                    scanf("%f", &packages[packageCount].cost);
+                    
+                    printf("Available seats: ");
+                    scanf("%d", &packages[packageCount].availableSeats);
+                    getchar();
+                    
+                    packageCount++;
+                    printf("Travel package added successfully!\n");
+                } else {
+                    printf("Sorry, we cannot add more packages.\n");
+                }
+                break;
+            case 2:
+                displayPackages(packages, packageCount);
+                break;
+            case 3:
+                bookPackage(packages, &packageCount);
+                break;
+            case 4:
+                printf("Exiting the program.\n");
+                return 0;
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+}
+
+void displayPackages(TravelPackage packages[], int packageCount) {
+    if (packageCount == 0) {
+        printf("No travel packages available.\n");
+        return;
+    }
+    
+    printf("\nAvailable Travel Packages:\n");
+    for (int i = 0; i < packageCount; i++) {
+        printf("Package %d: %s\n", i + 1, packages[i].packageName);
+        printf("Destination: %s\n", packages[i].destination);
+        printf("Duration: %d days\n", packages[i].duration);
+        printf("Cost: $%.2f\n", packages[i].cost);
+        printf("Available Seats: %d\n", packages[i].availableSeats);
+        printf("----------------------------\n");
+    }
+}
+
+void bookPackage(TravelPackage packages[], int *packageCount) {
+    int choice, seats;
+    
+    printf("Enter the package number to book: ");
+    scanf("%d", &choice);
+    
+    if (choice < 1 || choice > *packageCount) {
+        printf("Invalid package number.\n");
+        return;
+    }
+    
+    choice--;  // Adjust to 0-based index
+    
+    if (packages[choice].availableSeats > 0) {
+        printf("Enter number of seats to book: ");
+        scanf("%d", &seats);
+        
+        if (seats <= packages[choice].availableSeats) {
+            packages[choice].availableSeats -= seats;
+            printf("Successfully booked %d seat(s) for package %s.\n", seats, packages[choice].packageName);
+        } else {
+            printf("Sorry, not enough seats available.\n");
+        }
+    } else {
+        printf("No seats available for this package.\n");
+    }
+}
